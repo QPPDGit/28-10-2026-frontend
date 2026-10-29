@@ -271,6 +271,7 @@ jobs:
                       text = text.replace("Z2UI5", clean_namespace.upper())
                       text = text.replace("z2ui5_", f"{clean_namespace}_")
                       text = text.replace("Z2UI5_", f"{clean_namespace.upper()}_")
+                      text = text.replace("<SERVICEHANDLER>SCTAU5_CL_LP_HANDLER</SERVICEHANDLER>", "<SERVICEHANDLER>/SCT/AU5_CL_LP_HANDLER</SERVICEHANDLER>")
 
               elif is_src_02:
                   is_wapa = path.name.lower().endswith(".wapa.xml")
