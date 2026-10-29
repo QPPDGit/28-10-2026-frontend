@@ -238,6 +238,7 @@ jobs:
               is_src_01 = len(parts) >= 2 and parts[0] == "src" and parts[1] == "01"
               is_src_02 = len(parts) >= 2 and parts[0] == "src" and parts[1] == "02"
               is_sicf = path.name.lower().endswith(".sicf.xml")
+              is_sia_or_sco = path.name.lower().endswith((".sia1.xml", ".sia6.xml", ".sia7.xml", ".sco2.xml"))
               is_package_devc = path.name.lower().endswith("package.devc.xml")
 
               if is_src_01:
@@ -301,7 +302,26 @@ jobs:
                   text = text.replace("Z2UI5", clean_namespace.upper())
                   text = text.replace("z2ui5_", f"{clean_namespace}_")
                   text = text.replace("Z2UI5_", f"{clean_namespace.upper()}_")
-
+              
+              if is_sia_or_sco:
+                  text = text.replace("<IBS_ID>SCTAU5_HTTP</IBS_ID>", "<IBS_ID>/SCT/AU5_HTTP</IBS_ID>")
+                  text = text.replace("<NAME>SCTAU5_HTTP</NAME>", "<NAME>/SCT/AU5_HTTP</NAME>")
+                  text = text.replace("<NAME>SCTAU5_HTTP_IBS</NAME>", "<NAME>/SCT/AU5_HTTP_IBS</NAME>")
+                  text = text.replace("<APP_ID>SCTAU5_HTTP_IBS</APP_ID>", "<APP_ID>/SCT/AU5_HTTP_IBS</APP_ID>")
+                  text = text.replace("<SECONDARY_ID>SCTAU5_HTTP</SECONDARY_ID>", "<SECONDARY_ID>/SCT/AU5_HTTP</SECONDARY_ID>")
+                  text = text.replace("<BU_CATALOG_ID>SCTAU5_BC</BU_CATALOG_ID>", "<BU_CATALOG_ID>/SCT/AU5_BC</BU_CATALOG_ID>")
+                  text = text.replace("<CATALOG_ID>SCTAU5_BC</CATALOG_ID>", "<CATALOG_ID>/SCT/AU5_BC</CATALOG_ID>")
+                  text = text.replace("<AGR_NAME>SCTAU5_BC</AGR_NAME>", "<AGR_NAME>/SCT/AU5_BC</AGR_NAME>")
+                  text = text.replace("<NAME>SCTAU5_BC_0001</NAME>", "<NAME>/SCT/AU5_BC_0001</NAME>")
+                  text = text.replace("<BU_CATALOG_APP_ID>SCTAU5_BC_0001</BU_CATALOG_APP_ID>", "<BU_CATALOG_APP_ID>/SCT/AU5_BC_0001</BU_CATALOG_APP_ID>")
+                  text = text.replace("<BU_CATALOG_ID>SCTAU5_BC</BU_CATALOG_ID>", "<BU_CATALOG_ID>/SCT/AU5_BC</BU_CATALOG_ID>")
+                  text = text.replace("<APP_ID>SCTAU5_IAM_EXT</APP_ID>", "<APP_ID>/SCT/AU5_IAM_EXT</APP_ID>")
+                  text = text.replace("<NAME>SCTAU5_IAM_EXT</NAME>", "<NAME>/SCT/AU5_IAM_EXT</NAME>")
+                  text = text.replace("<APP_ID>SCTAU5_IAM_EXT</APP_ID>", "<APP_ID>/SCT/AU5_IAM_EXT</APP_ID>")
+                  text = text.replace("<UI_APP_ID>SCTAU5_UI5R</UI_APP_ID>", "<UI_APP_ID>/SCT/AU5_UI5R</UI_APP_ID>")
+                  text = text.replace("<APP_ID>SCTAU5_IAM_EXT</APP_ID>", "<APP_ID>/SCT/AU5_IAM_EXT</APP_ID>")
+                  text = text.replace("text111", "text222")
+              
               if text != original:
                   path.write_text(text, encoding="utf-8")
           PY
