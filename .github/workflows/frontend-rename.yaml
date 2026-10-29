@@ -204,6 +204,7 @@ jobs:
                   new_name = name.replace("z2ui5", "#sct#au5_flp")
                   new_name = new_name.replace("Z2UI5", "#SCT#AU5_FLP")
                   new_name = new_name.replace("#sct#au5_flp_bc", "#sct#au5_bc")
+                  new_name = new_name.replace("#sct#au5_flp_iam_ext", "#sct#au5_iam_ext")
 
               else:
                   # Default file naming
