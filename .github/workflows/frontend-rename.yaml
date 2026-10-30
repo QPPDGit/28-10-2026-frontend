@@ -329,7 +329,7 @@ jobs:
                   text = text.replace("<RESPONSIBLE>CB9980000090</RESPONSIBLE>", "<RESPONSIBLE>CB9980000044</RESPONSIBLE>")
                   text = text.replace("<MASTER_SYSTEM>LZK</MASTER_SYSTEM>", "<MASTER_SYSTEM>DF9</MASTER_SYSTEM>")
                   text = text.replace("<PACKAGE_NAME>ZLK98_01</PACKAGE_NAME>", "<PACKAGE_NAME>/SCT/AU5_FRONTEND_01</PACKAGE_NAME>")
-                  text = text.replace("text111", "text222")
+                  text = text.replace("<PACKAGE_NAME>ZLK98_02</PACKAGE_NAME>", "<PACKAGE_NAME>/SCT/AU5_FRONTEND_02</PACKAGE_NAME>")
                   text = text.replace("text111", "text222")
                   text = text.replace("text111", "text222")
                   text = text.replace("text111", "text222")
