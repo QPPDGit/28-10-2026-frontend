@@ -239,7 +239,7 @@ jobs:
               is_src_01 = len(parts) >= 2 and parts[0] == "src" and parts[1] == "01"
               is_src_02 = len(parts) >= 2 and parts[0] == "src" and parts[1] == "02"
               is_sicf = path.name.lower().endswith(".sicf.xml")
-              is_sia_or_sco = path.name.lower().endswith((".sia1.xml", ".sia6.xml", ".sia7.xml", ".sco2.xml"))
+              is_sia_sco_http = path.name.lower().endswith((".sia1.xml", ".sia6.xml", ".sia7.xml", ".sco2.xml", ".http.xml"))
               is_package_devc = path.name.lower().endswith("package.devc.xml")
 
               if is_src_01:
@@ -304,7 +304,7 @@ jobs:
                   text = text.replace("z2ui5_", f"{clean_namespace}_")
                   text = text.replace("Z2UI5_", f"{clean_namespace.upper()}_")
               
-              if is_sia_or_sco:
+              if is_sia_sco_http:
                   text = text.replace("<IBS_ID>SCTAU5_HTTP</IBS_ID>", "<IBS_ID>/SCT/AU5_HTTP</IBS_ID>")
                   text = text.replace("<NAME>SCTAU5_HTTP</NAME>", "<NAME>/SCT/AU5_HTTP</NAME>")
                   text = text.replace("<NAME>SCTAU5_HTTP_IBS</NAME>", "<NAME>/SCT/AU5_HTTP_IBS</NAME>")
@@ -323,9 +323,9 @@ jobs:
                   text = text.replace("<APP_ID>SCTAU5_IAM_EXT</APP_ID>", "<APP_ID>/SCT/AU5_IAM_EXT</APP_ID>")
                   text = text.replace("<REL_NAME>SCTAU5</REL_NAME>", "<REL_NAME>/SCT/AU5</REL_NAME>")
                   text = text.replace("<CHIP_ID>X-SAP-UI2-PAGE:X-SAP-UI2-CATALOGPAGE:SCTAU5_BC:3JIMWA6FN0TBYQ84PH7OK0FF4</CHIP_ID>", "<CHIP_ID>X-SAP-UI2-PAGE:X-SAP-UI2-CATALOGPAGE:/SCT/AU5_BC:3JIMWA6FN0TBYQ84PH7OK0FF4</CHIP_ID>")
-                  text = text.replace("text111", "text222")
-                  text = text.replace("text111", "text222")
-                  text = text.replace("text111", "text222")
+                  text = text.replace("<HTTPID>SCTAU5</HTTPID>", "<HTTPID>/SCT/AU5</HTTPID>")
+                  text = text.replace("<ID>SCTAU5</ID>", "<ID>/SCT/AU5</ID>")
+                  text = text.replace("<HTTP_SERVICE_ID>SCTAU5</HTTP_SERVICE_ID>", "<HTTP_SERVICE_ID>/SCT/AU5</HTTP_SERVICE_ID>")
                   text = text.replace("text111", "text222")
                   text = text.replace("text111", "text222")
                   text = text.replace("text111", "text222")
