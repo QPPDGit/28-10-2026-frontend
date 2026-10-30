@@ -322,7 +322,7 @@ jobs:
                   text = text.replace("<UI_APP_ID>SCTAU5_UI5R</UI_APP_ID>", "<UI_APP_ID>/SCT/AU5_UI5R</UI_APP_ID>")
                   text = text.replace("<APP_ID>SCTAU5_IAM_EXT</APP_ID>", "<APP_ID>/SCT/AU5_IAM_EXT</APP_ID>")
                   text = text.replace("<REL_NAME>SCTAU5</REL_NAME>", "<REL_NAME>/SCT/AU5</REL_NAME>")
-                  text = text.replace("text111", "text222")
+                  text = text.replace("<CHIP_ID>X-SAP-UI2-PAGE:X-SAP-UI2-CATALOGPAGE:SCTAU5_BC:3JIMWA6FN0TBYQ84PH7OK0FF4</CHIP_ID>", "<CHIP_ID>X-SAP-UI2-PAGE:X-SAP-UI2-CATALOGPAGE:/SCT/AU5_BC:3JIMWA6FN0TBYQ84PH7OK0FF4</CHIP_ID>")
                   text = text.replace("text111", "text222")
                   text = text.replace("text111", "text222")
                   text = text.replace("text111", "text222")
