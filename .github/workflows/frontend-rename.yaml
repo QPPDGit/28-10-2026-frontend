@@ -341,7 +341,7 @@ jobs:
                   text = text.replace("<PACKAGE_NAME>ZLK98_01</PACKAGE_NAME>", "<PACKAGE_NAME>/SCT/AU5_FRONTEND_01</PACKAGE_NAME>")
                   text = text.replace("<PACKAGE_NAME>ZLK98_02</PACKAGE_NAME>", "<PACKAGE_NAME>/SCT/AU5_FRONTEND_02</PACKAGE_NAME>")
                   text = text.replace("<UI_APP_ID>/SCT/AU5_UI5R</UI_APP_ID>", "<UI_APP_ID>/SCT/AU5_FLP_UI5R</UI_APP_ID>")
-                  text = text.replace("text111", "text222")
+                  text = text.replace("<SRVC_NAME>1782D97775FB5801CEF397BB74B1DC</SRVC_NAME>", "<SRVC_NAME>E28624D48E2CC14A823C04E7A50225</SRVC_NAME>")
               
               if text != original:
                   path.write_text(text, encoding="utf-8")
