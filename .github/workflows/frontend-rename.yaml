@@ -192,12 +192,17 @@ jobs:
               is_src_01 = len(parts) >= 2 and parts[0] == "src" and parts[1] == "01"
               is_src_02 = len(parts) >= 2 and parts[0] == "src" and parts[1] == "02"
               is_sicf = lower_name.endswith(".sicf.xml")
+              is_sush = lower_name.endswith(".sush.xml")
               is_package_devc = lower_name.endswith("package.devc.xml")
 
               if is_src_01 and is_sicf:
                   # src/01 SICF filename is fixed to #sct#au5_handler
                   new_name = name.replace("z2ui5", "#sct#au5_handler")
                   new_name = new_name.replace("Z2UI5", "#SCT#AU5_HANDLER")
+
+              elif is_src_01 and is_sush:
+              # src/01 SUSH to new fixed HASH fitting /SCT/AU5 
+                  new_name = name.replace("1782d97775fb5801cef397bb74b1dcht", "e28624d48e2cc14a823c04e7a50225ht")
 
               elif is_src_02 and not is_package_devc:
                   # src/02 all files except package.devc.xml -> hardcoded
@@ -273,6 +278,7 @@ jobs:
                   elif is_sush:
                       text = text.replace("<DEVCLASS>ZZ03_01</DEVCLASS>", "<DEVCLASS>/SCT/AU5_FRONTEND_01</DEVCLASS>")
                       text = text.replace("DISPLAY_NAME>R3TR HTTP Z2UI5</DISPLAY_NAME>", "DISPLAY_NAME>R3TR HTTP /SCT/AU5</DISPLAY_NAME>")
+                      text = text.replace("<NAME>1782D97775FB5801CEF397BB74B1DC</NAME>", "<NAME>E28624D48E2CC14A823C04E7A50225</NAME>")
                   else:
                       text = text.replace("z2ui5", clean_namespace)
                       text = text.replace("Z2UI5", clean_namespace.upper())
