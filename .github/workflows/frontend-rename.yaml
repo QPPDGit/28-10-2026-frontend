@@ -272,6 +272,7 @@ jobs:
                       text = text.replace("<ORIG_NAME>z2ui5</ORIG_NAME>", "<ORIG_NAME>au5_handler</ORIG_NAME>")
                   elif is_sush:
                       text = text.replace("<DEVCLASS>ZZ03_01</DEVCLASS>", "<DEVCLASS>/SCT/AU5_FRONTEND_01</DEVCLASS>")
+                      text = text.replace("DISPLAY_NAME>R3TR HTTP Z2UI5</DISPLAY_NAME>", "DISPLAY_NAME>R3TR HTTP /SCT/AU5</DISPLAY_NAME>")
                   else:
                       text = text.replace("z2ui5", clean_namespace)
                       text = text.replace("Z2UI5", clean_namespace.upper())
